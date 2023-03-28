@@ -5,8 +5,9 @@ import {generateArray} from "../Functions/OtherFunctions/GenerateArray"
 export const MainPage=()=>{
     const array=generateArray()
     const newarr=BubleSort(array)
-   
-    return <div>
+    
+    return (
+    <div>
        
-    </div>
+    </div>)
 }

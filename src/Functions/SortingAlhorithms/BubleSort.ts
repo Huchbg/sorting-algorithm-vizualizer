@@ -1,11 +1,11 @@
 
 export const BubleSort=(array:number[])=>{
-    for(let i =0 ;i<array.length;i++){
+    for(let i =0 ;i<array.length-1;i++){
         for(let j =0;j<array.length-i-1;j++){
-            let a=array[i]
-            let b=array[i+1]
+            let a=array[j]
+            let b=array[j+1]
             if(a>b){
-                swap(array,i,i+1)
+                swap(array,j,j+1)
             }
         }
     }
