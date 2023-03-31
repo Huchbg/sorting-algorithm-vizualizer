@@ -1,8 +1,9 @@
+import { SetArray } from "Functions/interfaces/SetArrayInterface";
+import {SetIndex} from "Functions/interfaces/SetIndexInteface"
 
 
 
-
-export const MergeSort=async(array: number[], SetFunck: any,SetIndex:any,SetIndexCompare:any)=>{
+export const MergeSort=async(array: number[], SetFunck: SetArray,SetIndex:SetIndex,SetIndexCompare:SetIndex)=>{
     
     await mergeSort(array,0,array.length,SetFunck,SetIndex,SetIndexCompare)
     
@@ -12,7 +13,7 @@ export const MergeSort=async(array: number[], SetFunck: any,SetIndex:any,SetInde
     }
     SetIndex(-1)
 }
-const mergeSort= async(array:number[],indexStart:number,indexEnd:number, SetFunck: any,SetIndex:any,SetIndexCompare:any)=>{
+const mergeSort= async(array:number[],indexStart:number,indexEnd:number, SetFunck: SetArray,SetIndex:SetIndex,SetIndexCompare:SetIndex)=>{
     if (indexStart >= indexEnd) {
         return;
       }
@@ -27,7 +28,7 @@ const mergeSort= async(array:number[],indexStart:number,indexEnd:number, SetFunc
    
 }
 
-const merge=async(array: number[], indexStart: number, midIndex: number, indexEnd: number,SetFunck: any,SetIndex:any,SetIndexCompare:any) => {
+const merge=async(array: number[], indexStart: number, midIndex: number, indexEnd: number,SetFunck: SetArray,SetIndex:SetIndex,SetIndexCompare:SetIndex) => {
     const leftArray = array.slice(indexStart, midIndex + 1);
     const rightArray = array.slice(midIndex + 1, indexEnd + 1);
     let i = indexStart;

@@ -1,6 +1,8 @@
 import {Swap} from"Functions/OtherFunctions/SwapFunc"
+import { SetArray } from "Functions/interfaces/SetArrayInterface";
+import {SetIndex} from "Functions/interfaces/SetIndexInteface"
 
-export const SelectionSort= async(array: number[], SetFunck: any,SetIndex:any,SetIndexCompare:any)=>{
+export const SelectionSort= async(array: number[], SetFunck: SetArray,SetIndex:SetIndex,SetIndexCompare:SetIndex)=>{
     for(let  i = 0;i<array.length;i++){
         let MinIndex=i
         for(let j = array.length-1;j > i;j--){
