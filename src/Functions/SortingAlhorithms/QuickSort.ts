@@ -5,6 +5,7 @@ import  { SetWorkingArray } from "Functions/interfaces/SetWorkingIndexes"
 
 export const QuickSort=async(array: number[], SetFunck: SetArray,SetIndex:SetIndex,SetIndexCompare:SetIndex,SetWorkingIndexes:SetWorkingArray)=>{
    await quickSort(array,0,array.length-1,SetFunck,SetIndex,SetIndexCompare,SetWorkingIndexes)
+   
 }
 
 const quickSort = async (

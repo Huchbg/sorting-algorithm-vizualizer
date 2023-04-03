@@ -1,12 +1,12 @@
 import { useEffect,useState } from "react"
-import { BubleSort } from "../Functions/SortingAlhorithms/BubleSort"
-import { SelectionSort } from "Functions/SortingAlhorithms/SelectionSort"
-import { MergeSort} from"Functions/SortingAlhorithms/MergeSort"
-import { QuickSort } from "Functions/SortingAlhorithms/QuickSort"
+import {SortingControler}from "Functions/OtherFunctions/SortingController"
 import {Wraper} from "components/Wraper"
 import {WraperOfWraper} from "components/WraperOfWraper"
 import { VerticalBer } from "components/Bar"
 import {generateArray} from "../Functions/OtherFunctions/GenerateArray"
+import {Button}from"components/Button"
+import {MainHeading} from "components/MainHeading"
+import {ButtonWraper} from "components/ButtonWraper"
 
 export const MainPage=()=>{
     const [array,SetFunction]=useState<number[]>([])
@@ -14,7 +14,8 @@ export const MainPage=()=>{
     const [indexCompare,SetIndexCompare]=useState<number>(-1)
     const [workingIndexes,SetWorkingIndexes]=useState<number[]>([])
     const [signalSetArray,SetSignalSetArray]=useState<boolean>(false)
-
+    const [canSort,SetConstCanSort]=useState<boolean>(true)
+    const [curentlySorting,setCurentlySorting]=useState<boolean>(false)
     useEffect(()=>{
         const newArr:number[]=generateArray()
         SetFunction([...newArr])
@@ -26,12 +27,19 @@ export const MainPage=()=>{
     
     return (
     <>
-        <button onClick={()=>{
-            QuickSort(array,SetFunction,SetIndex,SetIndexCompare,SetWorkingIndexes)
-        }}>Sort</button>
-        <button onClick={()=>{
-            signalSetArray?SetSignalSetArray(false):SetSignalSetArray(true)
-        }}>GenerateNewArray</button>
+        <MainHeading>Sorting Algorithm Visualizer</MainHeading>
+        <ButtonWraper>
+                {canSort && !curentlySorting ?<Button working={true} onClick={()=>{
+                    setCurentlySorting(true)
+                    SortingControler("SelectionSort",array,SetFunction,SetIndex,SetIndexCompare,SetWorkingIndexes,SetConstCanSort,setCurentlySorting)
+                }}>Sort</Button>:<Button working={false}>Sort</Button>}
+                {canSort ? <Button working={false}>GenerateNewArray</Button>:<Button onClick={()=>{
+                    SetConstCanSort(true)
+                    signalSetArray?SetSignalSetArray(false):SetSignalSetArray(true)
+                }} working={true}>GenerateNewArray</Button>}
+        </ButtonWraper>
+
+
         <WraperOfWraper>
             <Wraper>
                 {array.map((height,indx)=>{

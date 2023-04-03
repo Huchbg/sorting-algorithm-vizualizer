@@ -8,7 +8,7 @@ export const SelectionSort= async(array: number[], SetFunck: SetArray,SetIndex:S
         for(let j = array.length-1;j > i;j--){
             SetIndex(j)
             SetFunck([...array])
-            await new Promise((resolve) => setTimeout(resolve, 20)); 
+            await new Promise((resolve) => setTimeout(resolve, 7)); 
             if(array[j]<array[MinIndex]){
                 MinIndex=j
             }
@@ -17,5 +17,6 @@ export const SelectionSort= async(array: number[], SetFunck: SetArray,SetIndex:S
         
         Swap(array,i,MinIndex)
     }
+    SetIndex(-1)
     return array
 }
