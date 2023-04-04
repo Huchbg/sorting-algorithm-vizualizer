@@ -13,7 +13,7 @@ export const SortingControler=async(Type:string,array:number[],SetFunction:SetAr
         await MergeSort(array,SetFunction,SetIndex,SetIndexCompare)
     }else if(Type==="SelectionSort"){
         await SelectionSort(array,SetFunction,SetIndex,SetIndexCompare)
-    }else if(Type==="BubleSort"){
+    }else if(Type==="BubbleSort"){
         await BubleSort(array,SetFunction,SetIndex,SetIndexCompare)
     }
     SetConstCanSort(false)

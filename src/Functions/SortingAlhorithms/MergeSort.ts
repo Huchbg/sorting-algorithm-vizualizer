@@ -7,11 +7,11 @@ export const MergeSort=async(array: number[], SetFunck: SetArray,SetIndex:SetInd
     
     await mergeSort(array,0,array.length,SetFunck,SetIndex,SetIndexCompare)
     
-    for(let i = 0;i < array.length;i++){
+    /*for(let i = 0;i < array.length;i++){
         SetIndex(i)
         await new Promise((resolve) => setTimeout(resolve, 5));
     }
-    SetIndex(-1)
+    SetIndex(-1)*/
 }
 const mergeSort= async(array:number[],indexStart:number,indexEnd:number, SetFunck: SetArray,SetIndex:SetIndex,SetIndexCompare:SetIndex)=>{
     if (indexStart >= indexEnd) {

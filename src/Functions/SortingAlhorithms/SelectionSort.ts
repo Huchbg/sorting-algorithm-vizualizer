@@ -17,6 +17,6 @@ export const SelectionSort= async(array: number[], SetFunck: SetArray,SetIndex:S
         
         Swap(array,i,MinIndex)
     }
+    SetFunck([...array])
     SetIndex(-1)
-    return array
 }

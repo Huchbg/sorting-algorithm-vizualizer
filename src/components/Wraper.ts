@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wraper=styled.div`
-    height: 70vh;
+    height: 60vh;
     display: flex;
     position: absolute;
     gap:2px;

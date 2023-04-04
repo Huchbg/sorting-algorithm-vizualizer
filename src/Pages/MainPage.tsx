@@ -7,7 +7,9 @@ import {generateArray} from "../Functions/OtherFunctions/GenerateArray"
 import {Button}from"components/Button"
 import {MainHeading} from "components/MainHeading"
 import {ButtonWraper} from "components/ButtonWraper"
-
+import { MiniButonWraper } from "components/MinniButtonWarper"
+import { CheckBox } from "components/CheckBox"
+import { Footer } from "components/Footer"
 export const MainPage=()=>{
     const [array,SetFunction]=useState<number[]>([])
     const [index,SetIndex]=useState<number>(-1)
@@ -16,6 +18,7 @@ export const MainPage=()=>{
     const [signalSetArray,SetSignalSetArray]=useState<boolean>(false)
     const [canSort,SetConstCanSort]=useState<boolean>(true)
     const [curentlySorting,setCurentlySorting]=useState<boolean>(false)
+    const [curentSorrtingAlgorithm,SetCurentSortingAlgorithm]=useState<string>("QuickSort")
     useEffect(()=>{
         const newArr:number[]=generateArray()
         SetFunction([...newArr])
@@ -29,14 +32,19 @@ export const MainPage=()=>{
     <>
         <MainHeading>Sorting Algorithm Visualizer</MainHeading>
         <ButtonWraper>
-                {canSort && !curentlySorting ?<Button working={true} onClick={()=>{
+               <MiniButonWraper>
+               {canSort && !curentlySorting ?<Button working={true} onClick={()=>{
                     setCurentlySorting(true)
-                    SortingControler("SelectionSort",array,SetFunction,SetIndex,SetIndexCompare,SetWorkingIndexes,SetConstCanSort,setCurentlySorting)
+                    SortingControler(curentSorrtingAlgorithm,array,SetFunction,SetIndex,SetIndexCompare,SetWorkingIndexes,SetConstCanSort,setCurentlySorting)
                 }}>Sort</Button>:<Button working={false}>Sort</Button>}
                 {canSort ? <Button working={false}>GenerateNewArray</Button>:<Button onClick={()=>{
                     SetConstCanSort(true)
                     signalSetArray?SetSignalSetArray(false):SetSignalSetArray(true)
                 }} working={true}>GenerateNewArray</Button>}
+               </MiniButonWraper>
+               <MiniButonWraper>
+                <CheckBox curentSorrtingAlgorithm={curentSorrtingAlgorithm} SetCurentSortingAlgorithm={SetCurentSortingAlgorithm} canSort={canSort} curentlySorting={curentlySorting} />
+               </MiniButonWraper>
         </ButtonWraper>
 
 
@@ -56,6 +64,7 @@ export const MainPage=()=>{
                 })}
             </Wraper>
         </WraperOfWraper>
+        <Footer curentSorrtingAlgorithm={curentSorrtingAlgorithm} />
     </>
     )
 }

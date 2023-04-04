@@ -53,7 +53,7 @@ const quickSort = async (
     for(let j=indexStart;j<=indexEnd-1;j++){
 
         
-        SetWorkingIndexes([j,indexEnd])
+        SetWorkingIndexes([j,indexEnd+1])
         
         //SetIndex(i)
         SetIndexCompare(j)

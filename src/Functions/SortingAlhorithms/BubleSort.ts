@@ -17,10 +17,10 @@ export const BubleSort = async (array: number[], SetFunck: SetArray,SetIndex:Set
         }
       }
     }
-    for(let i = 0;i < array.length;i++){
+    /*for(let i = 0;i < array.length;i++){
       SetIndex(i)
       await new Promise((resolve) => setTimeout(resolve, 5));
-    }
+    }*/
     
     SetIndex(-1)
    
