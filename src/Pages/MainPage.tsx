@@ -31,7 +31,8 @@ export const MainPage=()=>{
     return (
     <>
         <MainHeading>Sorting Algorithm Visualizer</MainHeading>
-        <ButtonWraper>
+            <ButtonWraper>
+                HElloWOrld
                <MiniButonWraper>
                {canSort && !curentlySorting ?<Button working={true} onClick={()=>{
                     setCurentlySorting(true)
@@ -54,8 +55,6 @@ export const MainPage=()=>{
                     let color="white"
                     if(indx>workingIndexes[0]&&indx<workingIndexes[1]){
                         color="#D96200"
-                        
-                        
                     }else if(index===indx||indexCompare===indx){
                         color = "red"
                     }
