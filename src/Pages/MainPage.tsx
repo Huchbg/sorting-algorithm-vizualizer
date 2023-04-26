@@ -32,7 +32,7 @@ export const MainPage=()=>{
     <>
         <MainHeading>Sorting Algorithm Visualizer</MainHeading>
             <ButtonWraper>
-                HElloWOrld
+                HElloWOrld2
                <MiniButonWraper>
                {canSort && !curentlySorting ?<Button working={true} onClick={()=>{
                     setCurentlySorting(true)
